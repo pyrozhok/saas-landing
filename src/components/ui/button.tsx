@@ -13,6 +13,9 @@ const buttonVariants = cva(
         secondary:
           'border-white text-white bg-transparent hover:bg-white/10 transition-colors duration-200 ease-in-out',
       },
+      size: {
+        sm: 'h-10',
+      },
     },
     defaultVariants: {
       variant: 'primary',
@@ -27,13 +30,17 @@ export interface ButtonProps
 const Button: React.FC<ButtonProps> = ({
   className,
   variant,
+  size,
   children,
   ...props
 }) => {
   buttonVariants({ variant, className });
 
   return (
-    <button className={cn(buttonVariants({ variant, className }))} {...props}>
+    <button
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    >
       {children}
     </button>
   );
