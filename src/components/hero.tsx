@@ -142,7 +142,7 @@ const Hero = () => {
           frow.
         </p>
 
-        <form className='mx-auto mt-8 flex max-w-lg items-center rounded-full border border-white/15 pr-2'>
+        <form className='mx-auto mt-10 flex max-w-lg items-center rounded-full border border-white/15 pr-2'>
           <label htmlFor='hero-email-input' className='sr-only'>
             Enter your email
           </label>
