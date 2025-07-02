@@ -8,6 +8,7 @@ import Key from '@/components/ui/key';
 import avatar1 from '@/assets/images/avatar-ashwin-santiago.jpg';
 import avatar2 from '@/assets/images/avatar-lula-meyers.jpg';
 import avatar3 from '@/assets/images/avatar-florence-shaw.jpg';
+import avatar4 from '@/assets/images/avatar-owen-garcia.jpg';
 
 const features = [
   'Asset Library',
@@ -35,6 +36,7 @@ const Features = () => {
             <FeatureCard
               title='Real-time Collaboration'
               description='Work together seamlessly with conflict-free editing'
+              className='group'
             >
               <div className='flex aspect-video items-center justify-center'>
                 <Avatar className='z-40'>
@@ -58,8 +60,13 @@ const Features = () => {
                     alt='Avatar 3'
                   />
                 </Avatar>
-                <Avatar className='-ml-6 rounded-full border-transparent'>
-                  <div className='inline-flex size-full items-center justify-center gap-1 rounded-full bg-neutral-700'>
+                <Avatar className='-ml-6 rounded-full border-transparent transition group-hover:border-green-500'>
+                  <div className='relative inline-flex size-full items-center justify-center gap-1 rounded-full bg-neutral-700'>
+                    <Image
+                      className='absolute size-full rounded-full opacity-0 transition group-hover:opacity-100'
+                      src={avatar4}
+                      alt='Avatar 4'
+                    />
                     {Array.from({ length: 3 }).map((_, index) => (
                       <span
                         key={`dot-${index}`}
@@ -93,11 +100,18 @@ const Features = () => {
             <FeatureCard
               title='Keyboard Quick Actions'
               description='Powerful commands to help you create designs more quickly'
+              className='group'
             >
               <div className='flex aspect-video items-center justify-center gap-4'>
-                <Key className='w-28'>shift</Key>
-                <Key>alt</Key>
-                <Key>C</Key>
+                <Key className='w-28 outline-2 outline-offset-4 outline-transparent transition-all duration-500 group-hover:translate-y-1 group-hover:outline-lime-400'>
+                  shift
+                </Key>
+                <Key className='outline-2 outline-offset-4 outline-transparent transition-all delay-150 duration-500 group-hover:translate-y-1 group-hover:outline-lime-400'>
+                  alt
+                </Key>
+                <Key className='outline-2 outline-offset-4 outline-transparent transition-all delay-300 duration-500 group-hover:translate-y-1 group-hover:outline-lime-400'>
+                  C
+                </Key>
               </div>
             </FeatureCard>
           </li>
@@ -106,9 +120,9 @@ const Features = () => {
           {features.map((feature) => (
             <li
               key={feature}
-              className='inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900 px-3 py-1.5 md:px-5 md:py-2'
+              className='group inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-neutral-900 px-3 py-1.5 transition duration-500 hover:scale-105 md:px-5 md:py-2'
             >
-              <span className='inline-flex size-5 items-center justify-center rounded-full bg-lime-400 text-xl text-neutral-950'>
+              <span className='inline-flex size-5 items-center justify-center rounded-full bg-lime-400 text-xl text-neutral-950 transition duration-500 group-hover:rotate-45'>
                 &#10038;
               </span>
               <span className='font-medium tracking-wide md:text-lg'>
